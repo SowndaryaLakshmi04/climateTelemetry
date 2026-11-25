@@ -37,17 +37,6 @@ weather-app/
 
 `script.js` is organised into labelled sections: API layer, data processing, formatting, UI rendering, controllers, and events/init.
 
-## Setup
-
-1. Create a free account at <https://openweathermap.org/api> and copy your API key.
-2. Open `script.js` and replace the placeholder on the first config line:
-   ```js
-   const API_KEY = 'YOUR_API_KEY_HERE';
-   ```
-3. Open `index.html` in a browser (or use a local server such as VS Code Live Server).
-
-> New OpenWeatherMap keys can take up to about 2 hours to activate. Until then the app shows an "Invalid API key" message.
-
 ## API Endpoints Used
 
 | Purpose | Endpoint |
@@ -56,10 +45,3 @@ weather-app/
 | Current weather | `/data/2.5/weather` |
 | 5-day / 3-hour forecast | `/data/2.5/forecast` |
 | Air quality | `/data/2.5/air_pollution` |
-
-## Notes and Limitations
-
-- The free plan provides forecasts in 3-hour steps, so the hourly strip shows 3-hour intervals.
-- UV index and weather alerts are not shown because they are not available on the free endpoints.
-- The API key is stored in client-side code, which is fine for a learning project. A production app should proxy requests through a server to keep the key private.
-- The last searched city is remembered using `localStorage`.
