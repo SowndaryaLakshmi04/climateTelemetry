@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Real-time weather forecast and climate telemetry dashboard">
+<title>Climate Telemetry | Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="clear-day">
+<div class="spin" id="spin" role="status" aria-label="Loading"></div>
+<div class="app">
+<nav class="glass" aria-label="Primary">
+  <div class="avatar" title="Profile">S</div>
+  <button class="on" data-nav="top" title="Home" aria-label="Home"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></button>
+  <button data-nav="search" title="Search location" aria-label="Search"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></button>
+  <button data-nav="hourly" title="Hourly forecast" aria-label="Forecast"><svg class="i" viewBox="0 0 24 24"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1A4.5 4.5 0 0117 18z"/></svg></button>
+  <button data-nav="stats" title="Statistics" aria-label="Statistics"><svg class="i" viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></button>
+  <div class="sp"></div>
+  <button id="unitBtn" title="Toggle °C / °F" aria-label="Settings: toggle units"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></button>
+</nav>
+<main id="top">
+  <header>
+    <div><h1 id="place">Climate Telemetry</h1><p id="date">Search for a city to begin</p></div>
+    <form class="search" id="form" role="search">
+      <input id="q" type="search" placeholder="Search city, e.g. Paris or Paris, TX" aria-label="City name" autocomplete="off">
+      <button id="go" type="submit" aria-label="Search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    </form>
+  </header>
+  <div class="msg" id="msg" role="alert"><span id="msgText"></span><button aria-label="Dismiss" id="msgX">✕</button></div>
+  <div class="alts" id="alts"></div>
+  <div id="view"><div class="glass empty">Loading weather…</div></div>
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
